@@ -1,200 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dekclinic — Медицинский центр XXI века</title>
+  <meta charset="UTF-8">
+  <title>Dekclinic — Свайп блок</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   <style>
     body {
+      font-family: sans-serif;
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f2f4f7;
-      color: #333;
-    }
-    header {
-      background-color: #189cd8;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header img {
-      height: 40px;
-    }
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-    }
-    .hero {
-      background-color: #d5edf4;
-      padding: 80px 20px;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
-    .hero button {
-      background-color: #189cd8;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
+      background: #f2f4f7;
     }
     .section {
       padding: 60px 20px;
       text-align: center;
     }
-    .section h2 {
-      color: #189cd8;
+    .swiper {
+      width: 90%;
+      max-width: 800px;
+      margin: auto;
     }
-    .services, .doctors, .reviews {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 40px 20px;
-    }
-    .service, .doctor, .review {
-      background-color: white;
+    .swiper-slide {
+      background: white;
       border-radius: 8px;
-      padding: 20px;
-      width: 280px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
     }
-    .service h3, .doctor h3, .review h3 {
-      color: #189cd8;
-      margin-bottom: 10px;
+    .swiper-slide img {
+      width: 100%;
+      display: block;
     }
-    .service p, .doctor p, .review p {
-      font-size: 14px;
-    }
-    .contacts {
-      background-color: #d5edf4;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .contacts a {
-      color: #189cd8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .map {
-      padding: 0;
+    .swiper-slide p {
       margin: 0;
+      padding: 15px;
+      font-weight: bold;
+      color: #189cd8;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="dekclinic-logo-clean.png" alt="Dekclinic logo">
-    <nav>
-      <a href="#about">О клинике</a>
-      <a href="#services">Услуги</a>
-      <a href="#doctors">Врачи</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>Декклиник — медицина XXI века</h1>
-    <p>Забота, технологии и индивидуальный подход к каждому пациенту</p>
-    <button onclick="location.href='#contacts'">Записаться</button>
-  </section>
-
-  <section class="section" id="about">
-    <h2>О клинике</h2>
-    <p>Наша миссия — объединить новейшие медицинские технологии и тёплый, человечный подход к каждому пациенту. Мы предлагаем диагностику, лечение и сопровождение на всех этапах — от профилактики до реабилитации.</p>
-  </section>
-
-  <section class="section" id="services">
-    <h2>Услуги</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Терапия</h3>
-        <p>Комплексный подход к лечению простудных заболеваний, хронических состояний и профилактике осложнений.</p>
-      </div>
-      <div class="service">
-        <h3>УЗИ-диагностика</h3>
-        <p>Современные ультразвуковые исследования на импортном оборудовании под контролем опытных специалистов.</p>
-      </div>
-      <div class="service">
-        <h3>Стоматология</h3>
-        <p>Профилактика, лечение, чистка и восстановление зубов — комфортно и без боли.</p>
-      </div>
+<section class="section" id="promo">
+  <h2>Наши направления</h2>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="slide1.jpg" alt="УЗИ"><p>УЗИ и диагностика</p></div>
+      <div class="swiper-slide"><img src="slide2.jpg" alt="Кабинет"><p>Процедурный кабинет</p></div>
+      <div class="swiper-slide"><img src="slide3.jpg" alt="Стоматология"><p>Стоматология</p></div>
     </div>
-  </section>
-
-  <section class="section" id="doctors">
-    <h2>Наши врачи</h2>
-    <div class="doctors">
-      <div class="doctor">
-        <h3>Анна Иванова</h3>
-        <p>Врач-терапевт. Опыт более 15 лет. Индивидуальный подход и высокая квалификация.</p>
-      </div>
-      <div class="doctor">
-        <h3>Дмитрий Смирнов</h3>
-        <p>УЗИ-диагност. Специалист по работе с беременными и сердечно-сосудистыми пациентами.</p>
-      </div>
-      <div class="doctor">
-        <h3>Елена Ковалева</h3>
-        <p>Стоматолог-гигиенист. Поможет вернуть вашей улыбке здоровье и уверенность.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="reviews">
-    <h2>Отзывы</h2>
-    <div class="reviews">
-      <div class="review">
-        <h3>⭐⭐⭐⭐⭐</h3>
-        <p>Вежливый персонал, быстро приняли и всё объяснили. Очень доволен посещением!</p>
-      </div>
-      <div class="review">
-        <h3>⭐⭐⭐⭐⭐</h3>
-        <p>Записалась через Telegram — удобно, современно и без лишних звонков.</p>
-      </div>
-      <div class="review">
-        <h3>⭐⭐⭐⭐⭐</h3>
-        <p>Прошла УЗИ, врач объяснил всё понятно и профессионально. Спасибо!</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="contacts" id="contacts">
-    <h2>Контакты</h2>
-    <p>Адрес: г. Москва, ул. Новочеремушкинская, 49</p>
-    <p>Телефон: <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
-    <p>Email: <a href="mailto:info@dekclinic.ru">info@dekclinic.ru</a></p>
-    <p><a href="https://t.me/TestGroupforposting" target="_blank">Мы в Telegram</a></p>
-  </section>
-
-  <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2241.7908063026426!2d37.59581331604096!3d55.675217980534824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54c579a8d3a45%3A0xb827ba5be4bb13f2!2z0J3QtdCy0L7RgNC40YDQvdCw0Y8g0LzQsNC90YHQsNC70LjRjyDQvtCx0LvQsNGB0YLRjCwgNDk!5e0!3m2!1sru!2sru!4v1682694470712!5m2!1sru!2sru" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
+</section>
 
-  <script>
-    (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.src = "https://creator.voiceflow.com/widget/bundle.js";
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: "6837326f1b01dcf4229cba83" },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production'
-        });
-      };
-      s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+</script>
 
 </body>
 </html>
