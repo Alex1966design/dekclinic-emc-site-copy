@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -57,11 +56,32 @@
     .section h2 {
       color: #189cd8;
     }
+    .services {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    .service {
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .service h3 {
+      color: #189cd8;
+      margin-bottom: 10px;
+    }
+    .service p {
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://dekclinic.my.canva.site/favicon.ico" alt="Dekclinic logo">
+    <img src="dekclinic-logo-clean.png" alt="Dekclinic logo">
     <nav>
       <a href="#about">О клинике</a>
       <a href="#services">Услуги</a>
@@ -81,5 +101,39 @@
     <p>Наша миссия — объединить новейшие медицинские технологии и тёплый, человечный подход к каждому пациенту. Мы предлагаем диагностику, лечение и сопровождение на всех этапах — от профилактики до реабилитации.</p>
   </section>
 
+  <section class="section" id="services">
+    <h2>Услуги</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Терапия</h3>
+        <p>Комплексный подход к лечению простудных заболеваний, хронических состояний и профилактике осложнений.</p>
+      </div>
+      <div class="service">
+        <h3>УЗИ-диагностика</h3>
+        <p>Современные ультразвуковые исследования на импортном оборудовании под контролем опытных специалистов.</p>
+      </div>
+      <div class="service">
+        <h3>Стоматология</h3>
+        <p>Профилактика, лечение, чистка и восстановление зубов — комфортно и без боли.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.src = "https://creator.voiceflow.com/widget/bundle.js";
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: "6837326f1b01dcf4229cba83" },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      };
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+
 </body>
 </html>
+
