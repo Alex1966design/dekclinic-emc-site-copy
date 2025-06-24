@@ -24,6 +24,27 @@
       max-width: 1200px;
       margin: auto;
     }
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2em;
+    }
+    .video-block {
+      flex: 1 1 45%;
+    }
+    .logo-block {
+      flex: 1 1 45%;
+      text-align: right;
+    }
+    .logo-block img {
+      max-width: 200px;
+    }
+    video {
+      width: 100%;
+      border-radius: 16px;
+    }
     .swiper {
       padding: 40px 0;
     }
@@ -40,15 +61,9 @@
       height: auto;
       border-radius: 12px;
     }
-    video {
-      max-width: 100%;
-      border-radius: 16px;
-      margin: 2em 0;
-    }
     .assistant-link {
-      display: block;
-      margin: 2em 0;
       text-align: center;
+      margin: 2em 0;
     }
     .assistant-link a {
       background: #00a1df;
@@ -56,6 +71,9 @@
       padding: 1em 2em;
       border-radius: 8px;
       text-decoration: none;
+    }
+    section {
+      margin-top: 3em;
     }
   </style>
 </head>
@@ -65,24 +83,40 @@
   </header>
 
   <div class="container">
-    <h2>Популярные направления</h2>
+    <div class="flex-row">
+      <div class="video-block">
+        <video controls>
+          <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+      </div>
+      <div class="logo-block">
+        <img src="dekclinic-logo-clean.png" alt="Dekclinic logo"/>
+      </div>
+    </div>
+
+    <div class="assistant-link">
+      <a href="https://alex1966design.github.io/Dekclinic-chat/" target="_blank">Задать вопрос ассистенту</a>
+    </div>
+
+    <h2 style="text-align:center;">Популярные направления</h2>
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" onclick="goHome()">
-          <img src="IMG_1889.jpg" alt="slide">
+        <div class="swiper-slide" onclick="location.href='#top';">
+          <img src="IMG_1889.jpg" alt="slide"/>
           <p>Медицинские процедуры под контролем опытных врачей</p>
         </div>
-        <div class="swiper-slide" onclick="goHome()">
-          <img src="IMG_1974.jpg" alt="slide">
+        <div class="swiper-slide" onclick="location.href='#top';">
+          <img src="IMG_1977.jpg" alt="slide"/>
           <p>Ультразвуковая диагностика — быстро и точно</p>
         </div>
-        <div class="swiper-slide" onclick="goHome()">
-          <img src="IMG_1977.jpg" alt="slide">
+        <div class="swiper-slide" onclick="location.href='#top';">
+          <img src="IMG_2020.jpg" alt="slide"/>
           <p>Уютные кабинеты, в которых комфортно лечиться</p>
         </div>
-        <div class="swiper-slide" onclick="goHome()">
-          <img src="IMG_2020.jpg" alt="slide">
-          <p>Подготовка инструментов — безопасность гарантирована</p>
+        <div class="swiper-slide" onclick="location.href='#top';">
+          <img src="IMG_1974.jpg" alt="slide"/>
+          <p>Подготовка инструментов в стерильных условиях — безопасность гарантирована</p>
         </div>
       </div>
       <div class="swiper-pagination"></div>
@@ -90,51 +124,49 @@
       <div class="swiper-button-next"></div>
     </div>
 
-    <h2>Видео-приветствие</h2>
-    <video controls>
-      <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4">
-      Ваш браузер не поддерживает видео.
-    </video>
+    <section id="services">
+      <h2>Услуги</h2>
+      <p>Консультации, диагностика, анализы, физиотерапия, стоматология, косметология и многое другое.</p>
+    </section>
 
-    <div class="assistant-link">
-      <a href="https://alex1966design.github.io/Dekclinic-chat/" target="_blank">Перейти к ИИ-Ассистенту</a>
-    </div>
+    <section id="doctors">
+      <h2>Врачи</h2>
+      <p>Врачи Декклиник — это высококвалифицированные специалисты с многолетним опытом.</p>
+    </section>
+
+    <section id="contacts">
+      <h2>Контакты</h2>
+      <p>г. Москва, ул. Новочерёмушкинская, 49</p>
+      <p>Телефон: +7 (495) 123-45-67</p>
+    </section>
+
+    <section id="map">
+      <h2>Как нас найти</h2>
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A22931205f5f0a62e3df03a91d2792387e9fbd30299d91dfc4a21b2a6d4b4f9c4&amp;source=constructor"
+              width="100%" height="300" frameborder="0"></iframe>
+    </section>
   </div>
 
   <footer>
-    &copy; 2025 Dekclinic
+    <p>© 2025 Dekclinic. Все права защищены.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
     const swiper = new Swiper('.swiper', {
+      slidesPerView: 3,
+      spaceBetween: 30,
       loop: true,
-      autoplay: {
-        delay: 5000,
+      autoplay: { delay: 5000 },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      slidesPerView: 1,
-      spaceBetween: 20,
-      breakpoints: {
-        640: {
-          slidesPerView: 2
-        },
-        1024: {
-          slidesPerView: 3
-        }
-      }
     });
-
-    function goHome() {
-      window.location.href = "index.html";
-    }
   </script>
 </body>
 </html>
