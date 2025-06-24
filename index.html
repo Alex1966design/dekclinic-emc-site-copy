@@ -1,13 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dekclinic — Медицинский центр XXI века</title>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
   <style>
     body {
       margin: 0;
@@ -53,39 +51,32 @@
       border-radius: 5px;
       cursor: pointer;
     }
-    .section {
+    section {
       padding: 60px 20px;
       text-align: center;
     }
-    .section h2 {
+    h2 {
       color: #189cd8;
-      margin-bottom: 30px;
     }
     .swiper {
       width: 100%;
-      padding-bottom: 40px;
+      padding: 40px 0;
     }
     .swiper-slide {
       background: #fff;
       border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 350px;
+      max-width: 300px;
     }
     .swiper-slide img {
-      width: 300px;
+      width: 100%;
       height: auto;
-      border-radius: 12px;
-      margin-bottom: 10px;
+      border-radius: 8px;
     }
     .swiper-slide p {
-      font-size: 16px;
-      color: #333;
-    }
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: #189cd8;
+      margin-top: 10px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -106,46 +97,34 @@
     <button onclick="location.href='#contacts'">Записаться</button>
   </section>
 
-  <section class="section" id="about">
+  <section id="about">
     <h2>О клинике</h2>
-    <p>Наша миссия — объединить новейшие медицинские технологии и тёплый, человечный подход к каждому пациенту. Мы предлагаем диагностику, лечение и сопровождение на всех этапах — от профилактики до реабилитации.</p>
+    <p>Наша миссия — объединить новейшие медицинские технологии и тёплый, человечный подход к каждому пациенту.</p>
   </section>
 
-  <section class="section" id="services">
+  <section id="carousel">
     <h2>Популярные направления</h2>
-    <div class="swiper mySwiper">
+    <div class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="IMG_1889.jpg" alt="Анализы" />
-          <p>Профессиональный забор крови в комфортных условиях</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="IMG_1974.jpg" alt="Кабинет" />
-          <p>Современные кабинеты — чистота и спокойствие для всех</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="IMG_1977.jpg" alt="Лаборатория" />
-          <p>Точная диагностика и хранение проб по стандартам</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="IMG_2020.jpg" alt="Процедура" />
+          <img src="IMG_1889.jpg" alt="slide">
           <p>Медицинские процедуры под контролем опытных врачей</p>
         </div>
         <div class="swiper-slide">
-          <img src="IMG_2021.jpg" alt="Оборудование" />
-          <p>Оборудование экспертного уровня для диагностики</p>
-        </div>
-        <div class="swiper-slide">
-          <img src="slide1.jpg" alt="Slide 1" />
+          <img src="IMG_1977.jpg" alt="slide">
           <p>Ультразвуковая диагностика — быстро и точно</p>
         </div>
         <div class="swiper-slide">
-          <img src="slide2.jpg" alt="Slide 2" />
+          <img src="IMG_1974.jpg" alt="slide">
           <p>Уютные кабинеты, в которых комфортно лечиться</p>
         </div>
         <div class="swiper-slide">
-          <img src="slide3.jpg" alt="Slide 3" />
+          <img src="IMG_2020.jpg" alt="slide">
           <p>Подготовка инструментов — безопасность гарантирована</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="IMG_2021.jpg" alt="slide">
+          <p>Современное оборудование для точной диагностики</p>
         </div>
       </div>
       <div class="swiper-pagination"></div>
@@ -154,22 +133,19 @@
     </div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper(".mySwiper", {
-      slidesPerView: 2,
-      spaceBetween: 30,
+    const swiper = new Swiper('.swiper', {
       loop: true,
       autoplay: {
         delay: 5000,
       },
       pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+        el: '.swiper-pagination',
       },
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
     });
   </script>
