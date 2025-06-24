@@ -3,23 +3,12 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Dekclinic — Свайп блок</title>
+  <title>Dekclinic — Галерея с автопрокруткой</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: #f2f4f7;
-    }
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .swiper {
-      width: 90%;
-      max-width: 800px;
-      margin: auto;
-    }
+    body { font-family: sans-serif; margin: 0; background: #f2f4f7; }
+    .section { padding: 40px 20px; text-align: center; }
+    .swiper { width: 100%; max-width: 720px; margin: auto; }
     .swiper-slide {
       background: white;
       border-radius: 8px;
@@ -28,25 +17,72 @@
     }
     .swiper-slide img {
       width: 100%;
+      max-height: 300px;
+      object-fit: cover;
       display: block;
     }
     .swiper-slide p {
       margin: 0;
-      padding: 15px;
-      font-weight: bold;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #333;
+    }
+    .swiper-button-next, .swiper-button-prev {
       color: #189cd8;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #189cd8;
     }
   </style>
 </head>
 <body>
 
 <section class="section" id="promo">
-  <h2>Наши направления</h2>
+  <h2>Популярные направления</h2>
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="slide1.jpg" alt="УЗИ"><p>УЗИ и диагностика</p></div>
-      <div class="swiper-slide"><img src="slide2.jpg" alt="Кабинет"><p>Процедурный кабинет</p></div>
-      <div class="swiper-slide"><img src="slide3.jpg" alt="Стоматология"><p>Стоматология</p></div>
+
+      <div class="swiper-slide">
+        <img src="slide1.jpg" alt="">
+        <p>Современное УЗИ — точная диагностика без ожидания и боли.</p>
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="slide2.jpg" alt="">
+        <p>Процедурный кабинет: стерильность, комфорт и забота о пациенте.</p>
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="slide3.jpg" alt="">
+        <p>Эстетичная стоматология и безопасное лечение для всей семьи.</p>
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="IMG_1889.jpg" alt="">
+        <p>Диагностика и обследование на оборудовании экспертного класса.</p>
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="IMG_1974.jpg" alt="">
+        <p>Уютные кабинеты, в которых комфортно пациентам любого возраста.</p>
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="IMG_1977.jpg" alt="">
+        <p>Подготовка инструментов в стерильных условиях — безопасность гарантирована.</p>
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="IMG_2021.jpg" alt="">
+        <p>Индивидуальный подход к каждому пациенту в процедурном кабинете.</p>
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="IMG_2020.jpg" alt="">
+        <p>Сдача анализов без очередей и стресса — быстро и безболезненно.</p>
+      </div>
+    
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -58,6 +94,10 @@
 <script>
   const swiper = new Swiper('.swiper', {
     loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
