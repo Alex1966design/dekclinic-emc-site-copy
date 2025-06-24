@@ -1,113 +1,177 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Dekclinic — Галерея с автопрокруткой</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dekclinic — Медицинский центр XXI века</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
   <style>
-    body { font-family: sans-serif; margin: 0; background: #f2f4f7; }
-    .section { padding: 40px 20px; text-align: center; }
-    .swiper { width: 100%; max-width: 720px; margin: auto; }
-    .swiper-slide {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-    .swiper-slide img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      display: block;
-    }
-    .swiper-slide p {
+    body {
       margin: 0;
-      padding: 12px 16px;
-      font-size: 15px;
-      font-weight: 500;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f2f4f7;
       color: #333;
     }
-    .swiper-button-next, .swiper-button-prev {
-      color: #189cd8;
-    }
-    .swiper-pagination-bullet-active {
+    header {
       background-color: #189cd8;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      height: 40px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    .hero {
+      background-color: #d5edf4;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .hero button {
+      background-color: #189cd8;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .section h2 {
+      color: #189cd8;
+      margin-bottom: 30px;
+    }
+    .swiper {
+      width: 100%;
+      padding-bottom: 40px;
+    }
+    .swiper-slide {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 350px;
+    }
+    .swiper-slide img {
+      width: 300px;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .swiper-slide p {
+      font-size: 16px;
+      color: #333;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: #189cd8;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="dekclinic-logo-clean.png" alt="Dekclinic logo">
+    <nav>
+      <a href="#about">О клинике</a>
+      <a href="#services">Услуги</a>
+      <a href="#doctors">Врачи</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
 
-<section class="section" id="promo">
-  <h2>Популярные направления</h2>
-  <div class="swiper">
-    <div class="swiper-wrapper">
+  <section class="hero">
+    <h1>Декклиник — медицина XXI века</h1>
+    <p>Забота, технологии и индивидуальный подход к каждому пациенту</p>
+    <button onclick="location.href='#contacts'">Записаться</button>
+  </section>
 
-      <div class="swiper-slide">
-        <img src="slide1.jpg" alt="">
-        <p>Современное УЗИ — точная диагностика без ожидания и боли.</p>
+  <section class="section" id="about">
+    <h2>О клинике</h2>
+    <p>Наша миссия — объединить новейшие медицинские технологии и тёплый, человечный подход к каждому пациенту. Мы предлагаем диагностику, лечение и сопровождение на всех этапах — от профилактики до реабилитации.</p>
+  </section>
+
+  <section class="section" id="services">
+    <h2>Популярные направления</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="IMG_1889.jpg" alt="Анализы" />
+          <p>Профессиональный забор крови в комфортных условиях</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="IMG_1974.jpg" alt="Кабинет" />
+          <p>Современные кабинеты — чистота и спокойствие для всех</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="IMG_1977.jpg" alt="Лаборатория" />
+          <p>Точная диагностика и хранение проб по стандартам</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="IMG_2020.jpg" alt="Процедура" />
+          <p>Медицинские процедуры под контролем опытных врачей</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="IMG_2021.jpg" alt="Оборудование" />
+          <p>Оборудование экспертного уровня для диагностики</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="slide1.jpg" alt="Slide 1" />
+          <p>Ультразвуковая диагностика — быстро и точно</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="slide2.jpg" alt="Slide 2" />
+          <p>Уютные кабинеты, в которых комфортно лечиться</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="slide3.jpg" alt="Slide 3" />
+          <p>Подготовка инструментов — безопасность гарантирована</p>
+        </div>
       </div>
-    
-      <div class="swiper-slide">
-        <img src="slide2.jpg" alt="">
-        <p>Процедурный кабинет: стерильность, комфорт и забота о пациенте.</p>
-      </div>
-    
-      <div class="swiper-slide">
-        <img src="slide3.jpg" alt="">
-        <p>Эстетичная стоматология и безопасное лечение для всей семьи.</p>
-      </div>
-    
-      <div class="swiper-slide">
-        <img src="IMG_1889.jpg" alt="">
-        <p>Диагностика и обследование на оборудовании экспертного класса.</p>
-      </div>
-    
-      <div class="swiper-slide">
-        <img src="IMG_1974.jpg" alt="">
-        <p>Уютные кабинеты, в которых комфортно пациентам любого возраста.</p>
-      </div>
-    
-      <div class="swiper-slide">
-        <img src="IMG_1977.jpg" alt="">
-        <p>Подготовка инструментов в стерильных условиях — безопасность гарантирована.</p>
-      </div>
-    
-      <div class="swiper-slide">
-        <img src="IMG_2021.jpg" alt="">
-        <p>Индивидуальный подход к каждому пациенту в процедурном кабинете.</p>
-      </div>
-    
-      <div class="swiper-slide">
-        <img src="IMG_2020.jpg" alt="">
-        <p>Сдача анализов без очередей и стресса — быстро и безболезненно.</p>
-      </div>
-    
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper', {
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    }
-  });
-</script>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
 </body>
 </html>
