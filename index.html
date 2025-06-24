@@ -56,25 +56,25 @@
     .section h2 {
       color: #189cd8;
     }
-    .services, .doctors {
+    .services, .doctors, .reviews {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 20px;
       padding: 40px 20px;
     }
-    .service, .doctor {
+    .service, .doctor, .review {
       background-color: white;
       border-radius: 8px;
       padding: 20px;
       width: 280px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    .service h3, .doctor h3 {
+    .service h3, .doctor h3, .review h3 {
       color: #189cd8;
       margin-bottom: 10px;
     }
-    .service p, .doctor p {
+    .service p, .doctor p, .review p {
       font-size: 14px;
     }
     .contacts {
@@ -86,6 +86,10 @@
       color: #189cd8;
       text-decoration: none;
       font-weight: bold;
+    }
+    .map {
+      padding: 0;
+      margin: 0;
     }
   </style>
 </head>
@@ -147,6 +151,24 @@
     </div>
   </section>
 
+  <section class="section" id="reviews">
+    <h2>Отзывы</h2>
+    <div class="reviews">
+      <div class="review">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <p>Вежливый персонал, быстро приняли и всё объяснили. Очень доволен посещением!</p>
+      </div>
+      <div class="review">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <p>Записалась через Telegram — удобно, современно и без лишних звонков.</p>
+      </div>
+      <div class="review">
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <p>Прошла УЗИ, врач объяснил всё понятно и профессионально. Спасибо!</p>
+      </div>
+    </div>
+  </section>
+
   <section class="contacts" id="contacts">
     <h2>Контакты</h2>
     <p>Адрес: г. Москва, ул. Новочеремушкинская, 49</p>
@@ -154,6 +176,10 @@
     <p>Email: <a href="mailto:info@dekclinic.ru">info@dekclinic.ru</a></p>
     <p><a href="https://t.me/TestGroupforposting" target="_blank">Мы в Telegram</a></p>
   </section>
+
+  <div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2241.7908063026426!2d37.59581331604096!3d55.675217980534824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54c579a8d3a45%3A0xb827ba5be4bb13f2!2z0J3QtdCy0L7RgNC40YDQvdCw0Y8g0LzQsNC90YHQsNC70LjRjyDQvtCx0LvQsNGB0YLRjCwgNDk!5e0!3m2!1sru!2sru!4v1682694470712!5m2!1sru!2sru" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 
   <script>
     (function(d, t) {
