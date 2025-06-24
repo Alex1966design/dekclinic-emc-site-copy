@@ -56,26 +56,36 @@
     .section h2 {
       color: #189cd8;
     }
-    .services {
+    .services, .doctors {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 20px;
       padding: 40px 20px;
     }
-    .service {
+    .service, .doctor {
       background-color: white;
       border-radius: 8px;
       padding: 20px;
       width: 280px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    .service h3 {
+    .service h3, .doctor h3 {
       color: #189cd8;
       margin-bottom: 10px;
     }
-    .service p {
+    .service p, .doctor p {
       font-size: 14px;
+    }
+    .contacts {
+      background-color: #d5edf4;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .contacts a {
+      color: #189cd8;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -119,6 +129,32 @@
     </div>
   </section>
 
+  <section class="section" id="doctors">
+    <h2>Наши врачи</h2>
+    <div class="doctors">
+      <div class="doctor">
+        <h3>Анна Иванова</h3>
+        <p>Врач-терапевт. Опыт более 15 лет. Индивидуальный подход и высокая квалификация.</p>
+      </div>
+      <div class="doctor">
+        <h3>Дмитрий Смирнов</h3>
+        <p>УЗИ-диагност. Специалист по работе с беременными и сердечно-сосудистыми пациентами.</p>
+      </div>
+      <div class="doctor">
+        <h3>Елена Ковалева</h3>
+        <p>Стоматолог-гигиенист. Поможет вернуть вашей улыбке здоровье и уверенность.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <h2>Контакты</h2>
+    <p>Адрес: г. Москва, ул. Новочеремушкинская, 49</p>
+    <p>Телефон: <a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+    <p>Email: <a href="mailto:info@dekclinic.ru">info@dekclinic.ru</a></p>
+    <p><a href="https://t.me/TestGroupforposting" target="_blank">Мы в Telegram</a></p>
+  </section>
+
   <script>
     (function(d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -136,4 +172,3 @@
 
 </body>
 </html>
-
