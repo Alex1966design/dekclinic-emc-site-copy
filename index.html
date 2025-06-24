@@ -2,116 +2,139 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Dekclinic — EMC Copy</title>
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-    <style>
-        body {
-            font-family: sans-serif;
-            background: #f5f7fa;
-            margin: 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #007dc1;
-            margin: 40px 0 20px;
-        }
-
-        .swiper {
-            width: 100%;
-            padding: 50px 0;
-        }
-
-        .swiper-slide {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding: 20px;
-            text-align: center;
-            font-size: 16px;
-        }
-
-        .swiper-slide img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-
-        .swiper-slide p {
-            margin-top: 12px;
-            color: #333;
-        }
-
-        .swiper-button-next, .swiper-button-prev {
-            color: #007dc1;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: #007dc1;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dekclinic EMC</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #222;
+    }
+    header, footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #00a1df;
+      color: white;
+    }
+    .container {
+      padding: 2em;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .swiper {
+      padding: 40px 0;
+    }
+    .swiper-slide {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+    .swiper-slide img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    video {
+      max-width: 100%;
+      border-radius: 16px;
+      margin: 2em 0;
+    }
+    .assistant-link {
+      display: block;
+      margin: 2em 0;
+      text-align: center;
+    }
+    .assistant-link a {
+      background: #00a1df;
+      color: white;
+      padding: 1em 2em;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Dekclinic — медицина XXI века</h1>
+  </header>
 
-    <div class="section-title">Популярные направления</div>
-
+  <div class="container">
+    <h2>Популярные направления</h2>
     <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="IMG_1889.jpg" alt="slide" />
-                <p>Медицинские процедуры под контролем опытных врачей</p>
-            </div>
-            <div class="swiper-slide">
-                <img src="IMG_1974.jpg" alt="slide" />
-                <p>Ультразвуковая диагностика — быстро и точно</p>
-            </div>
-            <div class="swiper-slide">
-                <img src="IMG_1977.jpg" alt="slide" />
-                <p>Уютные кабинеты, в которых комфортно лечиться</p>
-            </div>
-            <div class="swiper-slide">
-                <img src="IMG_2020.jpg" alt="slide" />
-                <p>Подготовка инструментов — безопасность гарантирована</p>
-            </div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" onclick="goHome()">
+          <img src="IMG_1889.jpg" alt="slide">
+          <p>Медицинские процедуры под контролем опытных врачей</p>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-slide" onclick="goHome()">
+          <img src="IMG_1974.jpg" alt="slide">
+          <p>Ультразвуковая диагностика — быстро и точно</p>
+        </div>
+        <div class="swiper-slide" onclick="goHome()">
+          <img src="IMG_1977.jpg" alt="slide">
+          <p>Уютные кабинеты, в которых комфортно лечиться</p>
+        </div>
+        <div class="swiper-slide" onclick="goHome()">
+          <img src="IMG_2020.jpg" alt="slide">
+          <p>Подготовка инструментов — безопасность гарантирована</p>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper(".swiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                }
-            }
-        });
-    </script>
+    <h2>Видео-приветствие</h2>
+    <video controls>
+      <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4">
+      Ваш браузер не поддерживает видео.
+    </video>
+
+    <div class="assistant-link">
+      <a href="https://alex1966design.github.io/Dekclinic-chat/" target="_blank">Перейти к ИИ-Ассистенту</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Dekclinic
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      slidesPerView: 1,
+      spaceBetween: 20,
+      breakpoints: {
+        640: {
+          slidesPerView: 2
+        },
+        1024: {
+          slidesPerView: 3
+        }
+      }
+    });
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
