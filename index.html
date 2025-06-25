@@ -1,113 +1,198 @@
 
 <!DOCTYPE html>
-
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<title>Dekclinic EMC</title>
-<style>
-  /* Базовые стили */
-  body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-  form input, form textarea, form button {
-    font-size: 16px;
-  }
-
-  /* Мобильная адаптация */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start !important;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dekclinic EMC</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    nav {
+    header {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      margin-top: 10px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background: #f5f5f5;
+    }
+
+    header img {
+      height: 50px;
     }
 
     nav a {
-      margin: 5px 10px !important;
-      font-size: 16px !important;
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+
+    .video-container {
+      max-width: 300px;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    #feedback {
+      padding: 30px;
+      background: #f9f9f9;
     }
 
     form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    form input, form textarea, form button {
+      margin-bottom: 10px;
       padding: 10px;
-    }
-
-    form input, form textarea {
-      width: 100% !important;
       font-size: 16px;
     }
 
-    form button {
-      width: 100%;
-      font-size: 16px;
-    }
-
-    iframe {
-      width: 100% !important;
-      height: 200px !important;
-      margin-top: 20px;
+    .bottom-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
     }
 
     .telegram-button {
-      display: block;
+      padding: 12px 20px;
+      background-color: #24a1de;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .map {
+      max-width: 400px;
+    }
+
+    .map iframe {
       width: 100%;
-      text-align: center;
-      margin: 20px auto;
-      font-size: 16px;
+      height: 250px;
+      border: none;
     }
-  }
 
-@media (max-width: 768px) {
-  header img {
-    display: none;
-  }
-}
-</style>
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 5px 10px;
+        font-size: 16px;
+      }
+
+      header img {
+        display: none;
+      }
+
+      .bottom-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .map {
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      .telegram-button {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      form {
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
-<body>
-<section id="feedback">
-<form onsubmit="sendToTelegram(event)">
-<input name="name" placeholder="Ваше имя" required="" type="text"/>
-<input name="email" placeholder="Email или телефон" required="" type="email"/>
-<textarea name="message" placeholder="Ваш вопрос или сообщение"></textarea>
-<button type="submit">Отправить</button>
-</form>
-</section>
-<script>
-function sendToTelegram(e) {
-  e.preventDefault();
-  const name = document.querySelector('input[name="name"]').value;
-  const email = document.querySelector('input[name="email"]').value;
-  const message = document.querySelector('textarea[name="message"]').value;
 
-  const text = `📝 Новая заявка с сайта:\n👤 Имя: ${name}\n📧 Контакт: ${email}\n💬 Сообщение: ${message}`;
-  fetch('https://api.telegram.org/bot7598269211:AAH5zTrpyfQ5R1fGUS6M8rSi_vD-GgE_DOI/sendMessage', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      chat_id: '-1002526295641',
-      text: text
-    })
-  }).then(response => {
-    if (response.ok) {
-      alert('Спасибо! Ваше сообщение отправлено.');
-      document.querySelector('form').reset();
-    } else {
-      alert('Ошибка при отправке. Попробуйте позже.');
+<body>
+
+  <header>
+    <img src="dekclinic-logo-clean.png" alt="Dekclinic" />
+    <nav>
+      <a href="services.html">Услуги</a>
+      <a href="doctors.html">Врачи</a>
+      <a href="contacts.html">Контакты</a>
+      <a href="prices.html">Цены</a>
+      <a href="programs.html">Программы</a>
+      <a href="blog.html">Новости</a>
+    </nav>
+    <div class="video-container">
+      <video autoplay muted loop>
+        <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+      </video>
+    </div>
+  </header>
+
+  <section id="feedback">
+    <form onsubmit="sendToTelegram(event)">
+      <input name="name" placeholder="Ваше имя" required type="text" />
+      <input name="email" placeholder="Email или телефон" required type="email" />
+      <textarea name="message" placeholder="Ваш вопрос или сообщение"></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
+
+  <div class="bottom-row">
+    <a class="telegram-button" href="https://t.me/TestGroupforposting" target="_blank">Записаться через Telegram</a>
+
+    <div class="map">
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aefb104c397b2b7580a328cde4a2eb43b13e650f58a2e9f7bb36ed2d50ec5bd23&amp;source=constructor" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+    function sendToTelegram(e) {
+      e.preventDefault();
+      const name = document.querySelector('input[name="name"]').value;
+      const email = document.querySelector('input[name="email"]').value;
+      const message = document.querySelector('textarea[name="message"]').value;
+
+      const text = `📝 Новая заявка с сайта:\n👤 Имя: ${name}\n📧 Контакт: ${email}\n💬 Сообщение: ${message}`;
+      fetch('https://api.telegram.org/bot7598269211:AAH5zTrpyfQ5R1fGUS6M8rSi_vD-GgE_DOI/sendMessage', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: '-1002526295641',
+          text: text
+        })
+      }).then(response => {
+        if (response.ok) {
+          alert('Спасибо! Ваше сообщение отправлено.');
+          document.querySelector('form').reset();
+        } else {
+          alert('Ошибка при отправке. Попробуйте позже.');
+        }
+      });
     }
-  });
-}
-</script>
+  </script>
+
 </body>
 </html>
