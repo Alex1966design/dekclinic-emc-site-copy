@@ -4,164 +4,110 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Dekclinic EMC</title>
-<link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet"/>
 <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background-color: #f5f7fa;
-      color: #222;
+  /* Базовые стили */
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  form input, form textarea, form button {
+    font-size: 16px;
+  }
+
+  /* Мобильная адаптация */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start !important;
     }
-    header, footer {
-      text-align: center;
-      padding: 1em;
-      background-color: #00a1df;
-      color: white;
-    }
-    .container {
-      padding: 2em;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .flex-row {
+
+    nav {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2em;
-    }
-    .video-block {
-      flex: 1 1 45%;
-    }
-    .logo-block {
-      flex: 1 1 45%;
-      text-align: right;
-    }
-    .logo-block img {
-      max-width: 200px;
-    }
-    video {
+      justify-content: center;
       width: 100%;
-      border-radius: 16px;
+      margin-top: 10px;
     }
-    .swiper {
-      padding: 40px 0;
+
+    nav a {
+      margin: 5px 10px !important;
+      font-size: 16px !important;
     }
-    .swiper-slide {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
+
+    form {
+      padding: 10px;
+    }
+
+    form input, form textarea {
+      width: 100% !important;
+      font-size: 16px;
+    }
+
+    form button {
+      width: 100%;
+      font-size: 16px;
+    }
+
+    iframe {
+      width: 100% !important;
+      height: 200px !important;
+      margin-top: 20px;
+    }
+
+    .telegram-button {
+      display: block;
+      width: 100%;
       text-align: center;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      cursor: pointer;
+      margin: 20px auto;
+      font-size: 16px;
     }
-    .swiper-slide img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-    }
-    .assistant-link {
-      text-align: center;
-      margin: 2em 0;
-    }
-    .assistant-link a {
-      background: #00a1df;
-      color: white;
-      padding: 1em 2em;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-    section {
-      margin-top: 3em;
-    }
-  </style>
+  }
+
+@media (max-width: 768px) {
+  header img {
+    display: none;
+  }
+}
+</style>
 </head>
 <body>
-<header><img alt="Dekclinic logo" src="dekclinic-logo-clean.png" style="max-height: 60px; float: left; margin-right: 20px;"/>
-<h1>Dekclinic — медицина XXI века</h1>
-
-<nav style="float: right;">
-<a href="#services" style="margin: 0 10px; color: white; text-decoration: none;">Услуги</a>
-<a href="#doctors" style="margin: 0 10px; color: white; text-decoration: none;">Врачи</a>
-<a href="#contacts" style="margin: 0 10px; color: white; text-decoration: none;">Контакты</a>
-</nav>
-</header>
-<div class="container">
-<div class="flex-row">
-<div class="video-block">
-<video controls="" style="width: 33%; border-radius: 16px;">
-<source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4"/>
-          Ваш браузер не поддерживает видео.
-        </video>
-</div>
-
-</div>
-<div class="assistant-link">
-<a href="https://alex1966design.github.io/Dekclinic-chat/" target="_blank">Задать вопрос ассистенту</a>
-</div>
-<h2 style="text-align:center;">Популярные направления</h2>
-<div class="swiper">
-<div class="swiper-wrapper">
-<div class="swiper-slide" onclick="location.href='#top';">
-<img alt="slide" src="IMG_1889.jpg"/>
-<p>Медицинские процедуры под контролем опытных врачей</p>
-</div>
-<div class="swiper-slide" onclick="location.href='#top';">
-<img alt="slide" src="IMG_1977.jpg"/>
-<p>Ультразвуковая диагностика — быстро и точно</p>
-</div>
-<div class="swiper-slide" onclick="location.href='#top';">
-<img alt="slide" src="IMG_2020.jpg"/>
-<p>Уютные кабинеты, в которых комфортно лечиться</p>
-</div>
-<div class="swiper-slide" onclick="location.href='#top';">
-<img alt="slide" src="IMG_1974.jpg"/>
-<p>Подготовка инструментов в стерильных условиях — безопасность гарантирована</p>
-</div>
-</div>
-<div class="swiper-pagination"></div>
-<div class="swiper-button-prev"></div>
-<div class="swiper-button-next"></div>
-</div>
-<section id="services">
-<h2>Услуги</h2>
-<p>Консультации, диагностика, анализы, физиотерапия, стоматология, косметология и многое другое.</p>
+<section id="feedback">
+<form onsubmit="sendToTelegram(event)">
+<input name="name" placeholder="Ваше имя" required="" type="text"/>
+<input name="email" placeholder="Email или телефон" required="" type="email"/>
+<textarea name="message" placeholder="Ваш вопрос или сообщение"></textarea>
+<button type="submit">Отправить</button>
+</form>
 </section>
-<section id="doctors">
-<h2>Врачи</h2>
-<p>Врачи Декклиник — это высококвалифицированные специалисты с многолетним опытом.</p>
-</section>
-<section id="contacts">
-<h2>Контакты</h2>
-<p>г. Москва, ул. Новочерёмушкинская, 49</p>
-<p>Телефон: +7 (495) 123-45-67</p>
-</section>
-<section id="map">
-<h2>Как нас найти</h2>
-<iframe frameborder="0" height="300" src="https://yandex.ru/map-widget/v1/?um=constructor%3A22931205f5f0a62e3df03a91d2792387e9fbd30299d91dfc4a21b2a6d4b4f9c4&amp;source=constructor" width="100%"></iframe>
-</section>
-</div>
-<footer>
-<p>© 2025 Dekclinic. Все права защищены.</p>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-    const swiper = new Swiper('.swiper', {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      loop: true,
-      autoplay: { delay: 5000 },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-  </script>
+function sendToTelegram(e) {
+  e.preventDefault();
+  const name = document.querySelector('input[name="name"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const message = document.querySelector('textarea[name="message"]').value;
+
+  const text = `📝 Новая заявка с сайта:\n👤 Имя: ${name}\n📧 Контакт: ${email}\n💬 Сообщение: ${message}`;
+  fetch('https://api.telegram.org/bot7598269211:AAH5zTrpyfQ5R1fGUS6M8rSi_vD-GgE_DOI/sendMessage', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      chat_id: '-1002526295641',
+      text: text
+    })
+  }).then(response => {
+    if (response.ok) {
+      alert('Спасибо! Ваше сообщение отправлено.');
+      document.querySelector('form').reset();
+    } else {
+      alert('Ошибка при отправке. Попробуйте позже.');
+    }
+  });
+}
+</script>
 </body>
 </html>
