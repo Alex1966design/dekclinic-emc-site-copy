@@ -1,56 +1,151 @@
 
 <!DOCTYPE html>
-
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<title>Dekclinic EMC</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dekclinic EMC</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f9fb;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      width: 200px;
+    }
+
+    .video-map-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    video {
+      width: 48%;
+      height: auto;
+    }
+
+    iframe {
+      width: 48%;
+      height: 300px;
+      border: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    .swiper-slide {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .swiper-slide p {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .video-map-wrapper {
+        flex-direction: column;
+      }
+
+      video, iframe {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      header img {
+        width: 100px;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-<nav>
-<a href="services.html">Услуги</a>
-<a href="doctors.html">Врачи</a>
-<a href="contacts.html">Контакты</a>
-<a href="prices.html">Цены</a>
-<a href="programs.html">Программы</a>
-<a href="blog.html">Новости</a>
-</nav>
-</header>
+  <header>
+    <img src="dekclinic-logo-clean.png" alt="Dekclinic logo">
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="doctors.html">Врачи</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </header>
 
-<section id="slider" style="padding: 40px; background: #eaf6fc; text-align: center;">
-<h2 style="color:#189cd8;">Почему выбирают Dekclinic</h2>
-<div class="swiper">
-<div class="swiper-wrapper">
-<div class="swiper-slide"><img alt="" src="slide1.jpg"/><p>Новейшее оборудование</p></div>
-<div class="swiper-slide"><img alt="" src="slide2.jpg"/><p>Опытные специалисты</p></div>
-<div class="swiper-slide"><img alt="" src="slide3.jpg"/><p>Персональный подход</p></div>
-</div>
-</div>
-</section>
-<!-- Swiper CSS -->
-<link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  const swiper = new Swiper('.swiper', {
-    autoplay: {
-      delay: 5000,
-    },
-    loop: true,
-    speed: 600,
-    spaceBetween: 30,
-    slidesPerView: 1,
-    centeredSlides: true,
-  });
-</script>
-<section id="feedback">
-<form onsubmit="sendToTelegram(event)">
-<input name="name" placeholder="Ваше имя" required="" type="text"/>
-<input name="email" placeholder="Email или телефон" required="" type="email"/>
-<textarea name="message" placeholder="Ваш вопрос или сообщение"></textarea>
-<button type="submit">Отправить</button>
-</form>
-</section>
+  <div class="video-map-wrapper">
+    <video controls autoplay muted loop>
+      <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4" />
+      Ваш браузер не поддерживает видео.
+    </video>
+    <iframe 
+      src="https://yandex.ru/map-widget/v1/?um=constructor%3Aaa267b2fd59cdd95d1bceeb0931666b55d245f5e9b8c7d07f70c6a0df1d3d11e&amp;source=constructor" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <section>
+    <h2 style="text-align:center;">Популярные направления</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="IMG_1889.jpg" alt="slide">
+          <p>Ультразвуковая диагностика — быстро и точно</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="IMG_1974.jpg" alt="slide">
+          <p>Современные лаборатории с новейшим оборудованием</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="IMG_1977.jpg" alt="slide">
+          <p>Уютные кабинеты для приема пациентов</p>
+        </div>
+        <div class="swiper-slide">
+          <img src="IMG_2020.jpg" alt="slide">
+          <p>Процедурные под наблюдением опытных специалистов</p>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    });
+  </script>
 </body>
 </html>
