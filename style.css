@@ -1,187 +1,132 @@
-/* Базовые стили */
 body {
+  font-family: sans-serif;
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f2f4f7;
-  color: #333;
+  padding: 0;
+  background: #e8f4fa;
 }
 
-/* Шапка сайта */
 header {
-  background-color: #189cd8;
-  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  padding: 15px 30px;
+  background: #ffffff;
 }
 
-header img {
-  height: 40px;
+.logo {
+  height: 100px;
 }
 
 nav a {
-  margin-left: 20px;
+  margin: 0 12px;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #333;
+  font-weight: 600;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Герой-блок */
-.hero {
-  background-color: #d5edf4;
-  padding: 80px 20px;
-  text-align: center;
+main {
+  padding: 20px;
 }
 
 .hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  text-align: center;
+  color: #006ca4;
 }
 
-.hero p {
-  font-size: 18px;
-  margin-bottom: 30px;
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-.hero button {
-  background-color: #189cd8;
-  color: white;
+video {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+iframe {
   border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
+  margin-left: 20px;
 }
 
-.hero button:hover {
-  background-color: #007bb8;
-}
-
-/* Секция */
-.section {
-  padding: 60px 20px;
+.slider h2 {
   text-align: center;
 }
 
-.section h2 {
-  color: #189cd8;
-  margin-bottom: 20px;
+.carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
-/* Слайдер Swiper */
-.swiper {
-  width: 100%;
-  padding: 20px 0;
-}
-
-.swiper-slide {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+.slide {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 6px #ccc;
+  width: 220px;
+  padding: 10px;
   text-align: center;
 }
 
-.swiper-slide img {
+.slide img {
   width: 100%;
   height: auto;
-  max-height: 250px;
-  object-fit: cover;
+  border-radius: 6px;
 }
 
-.swiper-slide p {
+.telegram-button {
+  display: block;
+  background-color: #0088cc;
+  color: white;
+  text-align: center;
   padding: 12px;
-  font-size: 16px;
+  border-radius: 5px;
+  margin: 20px auto;
+  width: fit-content;
+  font-size: 18px;
+  text-decoration: none;
 }
 
-/* Форма */
 form {
+  margin-top: 40px;
   display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 20px auto;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 
-input, textarea {
-  padding: 12px;
+form input, form textarea {
+  padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  resize: vertical;
+  width: 250px;
 }
 
-button[type="submit"] {
-  background-color: #189cd8;
+form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #006ca4;
   color: white;
   border: none;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 6px;
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  background-color: #0d7abf;
-}
-
-/* Кнопка Telegram */
-.telegram-button {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #229ED9;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Карта */
-.map-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  height: 200px;
-  border: 2px solid #189cd8;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-/* Мобильная адаптация */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   header {
     flex-direction: column;
-    align-items: flex-start;
   }
-
   nav {
     margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-
-  .hero h1 {
-    font-size: 28px;
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
   }
-
-  .swiper-slide img {
-    max-height: 180px;
-  }
-
-  .map-container {
+  .logo {
     display: none;
-  }
-
-  .telegram-button {
-    bottom: 10px;
-    left: 10px;
-    padding: 10px 14px;
   }
 }
