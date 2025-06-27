@@ -1,132 +1,57 @@
+
 body {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background: #e8f4fa;
+  background: #e6f3f9;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background: #ffffff;
+  padding: 10px 30px;
+  background: white;
 }
 
 .logo {
-  height: 100px;
+  height: 60px;
 }
 
 nav a {
-  margin: 0 12px;
+  margin: 0 10px;
   text-decoration: none;
-  color: #333;
-  font-weight: 600;
+  color: #003366;
+  font-weight: bold;
 }
 
-main {
+.animation-carousel {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.lower-section {
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
 }
 
-.hero h1 {
-  text-align: center;
-  color: #006ca4;
-}
-
-.hero-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-video {
-  width: 300px;
-  height: auto;
-  border-radius: 8px;
-}
-
-iframe {
-  border: none;
-  margin-left: 20px;
-}
-
-.slider h2 {
-  text-align: center;
-}
-
-.carousel {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.slide {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 6px #ccc;
-  width: 220px;
-  padding: 10px;
-  text-align: center;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-.telegram-button {
-  display: block;
-  background-color: #0088cc;
-  color: white;
-  text-align: center;
-  padding: 12px;
-  border-radius: 5px;
-  margin: 20px auto;
-  width: fit-content;
-  font-size: 18px;
-  text-decoration: none;
-}
-
-form {
-  margin-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-form input, form textarea {
-  padding: 10px;
-  font-size: 16px;
-  width: 250px;
-}
-
-form button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background: #006ca4;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
-  nav {
-    margin-top: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .hero-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .logo {
-    display: none;
-  }
+.video-box, .map-box {
+  width: 48%;
 }
