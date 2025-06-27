@@ -1,4 +1,8 @@
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -9,8 +13,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
+  padding: 15px 30px;
   background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -22,23 +27,55 @@ nav a {
   text-decoration: none;
   color: #003366;
   font-weight: bold;
+  font-size: 16px;
 }
 
-.animation-carousel {
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: #d6eefe;
+}
+
+.slider-container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  overflow-x: auto;
   gap: 20px;
   padding: 20px;
+  scroll-snap-type: x mandatory;
+  background: white;
+}
+
+.slide {
+  flex-shrink: 0;
+  width: 300px;
+  scroll-snap-align: start;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.features {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
   flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .card {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 200px;
-  text-align: center;
+  padding: 10px;
 }
 
 .card img {
@@ -46,12 +83,74 @@ nav a {
   border-radius: 4px;
 }
 
-.lower-section {
+.contact {
+  text-align: center;
+  padding: 30px;
+}
+
+form {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form input, form textarea, form button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+form button {
+  background: #005baa;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.telegram-button {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  background: #0088cc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.bottom-blocks {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+  background: white;
 }
 
 .video-box, .map-box {
-  width: 48%;
+  width: 320px;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bottom-blocks {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .video-box, .map-box {
+    width: 90%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
 }
