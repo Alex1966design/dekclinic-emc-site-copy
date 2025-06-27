@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -8,7 +9,7 @@
 </head>
 <body>
   <header>
-    <a href="index.html"><img src="dekclinic-logo-clean.png" alt="Dekclinic Logo" class="logo" /></a>
+    <img src="dekclinic-logo-clean.png" alt="Dekclinic Logo" class="logo" />
     <nav>
       <a href="index.html">Главная</a>
       <a href="services.html">Услуги</a>
@@ -21,39 +22,40 @@
   </header>
 
   <main>
-    <h1 class="headline">Dekclinic — медицинский центр 21 века</h1>
+    <h1>Dekclinic — медицинский центр 21 века</h1>
 
     <section class="slider-container">
       <div class="slide"><img src="slide1.jpg" alt="Слайд 1"></div>
       <div class="slide"><img src="slide2.jpg" alt="Слайд 2"></div>
       <div class="slide"><img src="slide3.jpg" alt="Слайд 3"></div>
-      <div class="slide"><img src="IMG_1889.jpg" alt="Слайд 4"></div>
+      <div class="slide"><img src="slide4.jpg" alt="Слайд 4"></div>
     </section>
 
-    <section class="contact">
-      <form onsubmit="sendToTelegram(event)">
-        <input name="name" placeholder="Ваше имя" required />
-        <input name="email" placeholder="Email или телефон" required />
-        <textarea name="message" placeholder="Ваш вопрос или сообщение"></textarea>
-        <button type="submit">Отправить</button>
-      </form>
-      <a class="telegram-button" href="https://t.me/TestGroupforposting" target="_blank">📩 Записаться через Telegram</a>
-    </section>
-
-    <section class="bottom-blocks">
-      <div class="bottom-left">
-        <video controls width="320" height="180">
+    <section class="bottom-flex">
+      <div class="video-box">
+        <video controls width="300" height="180">
           <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="bottom-right">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7cf6e3530cdbb7f01e8f15a8ab3570f7f33cbddfe08a5d59324a5b5e87e68d92&amp;source=constructor" width="320" height="180" frameborder="0"></iframe>
+
+      <div class="form-box">
+        <form onsubmit="sendToTelegram(event)">
+          <input name="name" placeholder="Ваше имя" required />
+          <input name="email" placeholder="Email или телефон" required />
+          <textarea name="message" placeholder="Ваш вопрос или сообщение"></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+        <a class="telegram-button" href="https://t.me/TestGroupforposting" target="_blank">📩 Записаться через Telegram</a>
+      </div>
+
+      <div class="map-box">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7cf6e3530cdbb7f01e8f15a8ab3570f7f33cbddfe08a5d59324a5b5e87e68d92&amp;source=constructor" width="300" height="180" frameborder="0"></iframe>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2025 Dekclinic. Все права защищены.
+    <p>© 2025 Dekclinic. Все права защищены.</p>
   </footer>
 
   <script>
