@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dekclinic</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -19,23 +21,64 @@
     </nav>
   </header>
 
-  <section class="animation-carousel">
-    <div class="card"><img src="slide1.jpg" alt="Slide 1" /><p>Современное оборудование</p></div>
-    <div class="card"><img src="slide2.jpg" alt="Slide 2" /><p>Высокий стандарт гигиены</p></div>
-    <div class="card"><img src="slide3.jpg" alt="Slide 3" /><p>Комфортные кабинеты</p></div>
-    <div class="card"><img src="IMG_2020.jpg" alt="Slide 4" /><p>УЗИ-диагностика</p></div>
-  </section>
+  <main>
+    <section class="hero">
+      <h1>Dekclinic — медицинский центр 21 века</h1>
+    </section>
 
-  <div class="lower-section">
-    <div class="video-box">
-      <video controls width="250">
-        <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4" />
-        Ваш браузер не поддерживает видео.
-      </video>
-    </div>
-    <div class="map-box">
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4ff8e8c30b1a7f4b17431571a5f209b87f561f8c1a44c4c3545b209b2c657a83&amp;source=constructor" width="250" height="200" frameborder="0"></iframe>
-    </div>
-  </div>
+    <section class="features">
+      <h2>Почему выбирают Dekclinic</h2>
+      <div class="slides">
+        <div class="slide"><img src="slide1.jpg" alt="slide1"/><p>Современное оборудование</p></div>
+        <div class="slide"><img src="slide2.jpg" alt="slide2"/><p>Высокий стандарт гигиены</p></div>
+        <div class="slide"><img src="slide3.jpg" alt="slide3"/><p>Комфортные кабинеты</p></div>
+        <div class="slide"><img src="IMG_1889.jpg" alt="slide4"/><p>УЗИ-диагностика</p></div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <form onsubmit="sendToTelegram(event)">
+        <input name="name" placeholder="Ваше имя" required />
+        <input name="email" placeholder="Email или телефон" required />
+        <textarea name="message" placeholder="Ваш вопрос или сообщение"></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+      <a class="telegram-button" href="https://t.me/TestGroupforposting" target="_blank">📩 Записаться через Telegram</a>
+    </section>
+
+    <section class="bottom-blocks">
+      <div class="bottom-left">
+        <video controls width="320" height="180">
+          <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="bottom-right">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7cf6e3530cdbb7f01e8f15a8ab3570f7f33cbddfe08a5d59324a5b5e87e68d92&amp;source=constructor" width="320" height="180" frameborder="0"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function sendToTelegram(e) {
+      e.preventDefault();
+      const name = document.querySelector('input[name="name"]').value;
+      const email = document.querySelector('input[name="email"]').value;
+      const message = document.querySelector('textarea[name="message"]').value;
+      const text = `📝 Новая заявка с сайта:\n👤 Имя: ${name}\n📧 Контакт: ${email}\n💬 Сообщение: ${message}`;
+
+      fetch('https://api.telegram.org/bot7598269211:AAH5zTrpyfQ5R1fGUS6M8rSi_vD-GgE_DOI/sendMessage', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ chat_id: '-1002526295641', text })
+      }).then(res => {
+        if (res.ok) {
+          alert('Спасибо! Ваше сообщение отправлено.');
+          document.querySelector('form').reset();
+        } else {
+          alert('Ошибка при отправке. Попробуйте позже.');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
