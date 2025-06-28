@@ -5,80 +5,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dekclinic</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #e6f3f9;
+    }
+    header {
+      padding: 20px;
+      background: white;
+      text-align: center;
+    }
+    .slider-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+    .slide {
+      flex: 0 0 auto;
+      width: 300px;
+    }
+    .slide img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    nav {
+      text-align: right;
+      margin: 10px 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+    }
+    .main-blocks {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      background: #fff;
+    }
+    .video-box video {
+      max-width: 320px;
+      height: auto;
+    }
+    .map-box iframe {
+      width: 320px;
+      height: 180px;
+      border: none;
+    }
+    .form-box {
+      max-width: 320px;
+      text-align: center;
+    }
+    .form-box input,
+    .form-box textarea {
+      width: 100%;
+      margin: 5px 0;
+      padding: 8px;
+    }
+    .form-box button,
+    .form-box a {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      padding: 10px;
+      background: #f1f1f1;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="dekclinic-logo-clean.png" alt="Dekclinic Logo" class="logo" />
-    <nav>
-      <a href="index.html">Главная</a>
-      <a href="services.html">Услуги</a>
-      <a href="doctors.html">Врачи</a>
-      <a href="contacts.html">Контакты</a>
-      <a href="prices.html">Цены</a>
-      <a href="programs.html">Программы</a>
-      <a href="blog.html">Новости</a>
-    </nav>
-  </header>
 
-  <main>
-    <h1>Dekclinic — медицинский центр 21 века</h1>
+<nav>
+  <a href="#">Главная</a>
+  <a href="#">Услуги</a>
+  <a href="#">Врачи</a>
+  <a href="#">Контакты</a>
+  <a href="#">Цены</a>
+  <a href="#">Программы</a>
+  <a href="#">Новости</a>
+</nav>
 
-    <section class="slider-container">
-      <div class="slide"><img src="slide1.jpg" alt="Слайд 1"></div>
-      <div class="slide"><img src="slide2.jpg" alt="Слайд 2"></div>
-      <div class="slide"><img src="slide3.jpg" alt="Слайд 3"></div>
-      <div class="slide"><img src="slide4.jpg" alt="Слайд 4"></div>
-    </section>
+<header>
+  <h1>Dekclinic — медицинский центр 21 века</h1>
+</header>
 
-    <section class="bottom-flex">
-      <div class="video-box">
-        <video controls width="300" height="180">
-          <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4">
-        </video>
-      </div>
+<section class="slider-container">
+  <div class="slide"><img src="slide1.jpg" alt="Слайд 1"></div>
+  <div class="slide"><img src="slide2.jpg" alt="Слайд 2"></div>
+  <div class="slide"><img src="slide3.jpg" alt="Слайд 3"></div>
+  <div class="slide"><img src="IMG_1889.jpg" alt="Слайд 4"></div>
+</section>
 
-      <div class="form-box">
-        <form onsubmit="sendToTelegram(event)">
-          <input name="name" placeholder="Ваше имя" required />
-          <input name="email" placeholder="Email или телефон" required />
-          <textarea name="message" placeholder="Ваш вопрос или сообщение"></textarea>
-          <button type="submit">Отправить</button>
-        </form>
-        <a class="telegram-button" href="https://t.me/TestGroupforposting" target="_blank">📩 Записаться через Telegram</a>
-      </div>
+<section class="main-blocks">
+  <div class="video-box">
+    <video controls>
+      <source src="Sergey AI Dekclinic assistant2.mp4" type="video/mp4">
+    </video>
+  </div>
 
-      <div class="map-box">
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7cf6e3530cdbb7f01e8f15a8ab3570f7f33cbddfe08a5d59324a5b5e87e68d92&amp;source=constructor" width="300" height="180" frameborder="0"></iframe>
-      </div>
-    </section>
-  </main>
+  <div class="form-box">
+    <form onsubmit="sendToTelegram(event)">
+      <input name="name" placeholder="Ваше имя" required />
+      <input name="email" placeholder="Email или телефон" required />
+      <textarea name="message" placeholder="Ваш вопрос или сообщение"></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+    <a href="https://t.me/TestGroupforposting" target="_blank">📩 Записаться через Telegram</a>
+  </div>
 
-  <footer>
-    <p>© 2025 Dekclinic. Все права защищены.</p>
-  </footer>
+  <div class="map-box">
+    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7cf6e3530cdbb7f01e8f15a8ab3570f7f33cbddfe08a5d59324a5b5e87e68d92&amp;source=constructor"></iframe>
+  </div>
+</section>
 
-  <script>
-    function sendToTelegram(e) {
-      e.preventDefault();
-      const name = document.querySelector('input[name="name"]').value;
-      const email = document.querySelector('input[name="email"]').value;
-      const message = document.querySelector('textarea[name="message"]').value;
-      const text = `📝 Новая заявка с сайта:\n👤 Имя: ${name}\n📧 Контакт: ${email}\n💬 Сообщение: ${message}`;
+<footer>
+  © 2025 Dekclinic. Все права защищены.
+</footer>
 
-      fetch('https://api.telegram.org/bot7598269211:AAH5zTrpyfQ5R1fGUS6M8rSi_vD-GgE_DOI/sendMessage', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ chat_id: '-1002526295641', text })
-      }).then(res => {
-        if (res.ok) {
-          alert('Спасибо! Ваше сообщение отправлено.');
-          document.querySelector('form').reset();
-        } else {
-          alert('Ошибка при отправке. Попробуйте позже.');
-        }
-      });
+<script>
+function sendToTelegram(e) {
+  e.preventDefault();
+  const name = document.querySelector('input[name="name"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const message = document.querySelector('textarea[name="message"]').value;
+  const text = `📝 Новая заявка с сайта:\n👤 Имя: ${name}\n📧 Контакт: ${email}\n💬 Сообщение: ${message}`;
+  fetch('https://api.telegram.org/bot7598269211:AAH5zTrpyfQ5R1fGUS6M8rSi_vD-GgE_DOI/sendMessage', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ chat_id: '-1002526295641', text })
+  }).then(res => {
+    if (res.ok) {
+      alert('Спасибо! Ваше сообщение отправлено.');
+      document.querySelector('form').reset();
+    } else {
+      alert('Ошибка при отправке. Попробуйте позже.');
     }
-  </script>
+  });
+}
+</script>
+
 </body>
 </html>
